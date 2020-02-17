@@ -1,0 +1,26 @@
+---
+title: "webpage for a map with leaflet"
+author: "yusue"
+date: "2/16/2020"
+output: html_document
+---
+
+## Introduction
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Here, I am going to show the map of National University of Singapore.
+
+## My first map
+```{r}
+library(leaflet)
+library(dplyr)
+NUS = c("<a href= 'http://www.nus.edu.sg/' >National University of Singapore</a>")
+
+map = leaflet() %>%
+    addTiles() %>%
+    addMarkers(lng=103.7764,lat=1.2966, popup=NUS)
+
+map    
+```
